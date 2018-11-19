@@ -1,0 +1,13 @@
+var a = 0;
+def hello(x, y) {
+    var p = -10;
+    var q = 20;
+    return (a + x + y + p + q);
+}
+
+def main() {
+    print hello(10, 20);
+    return 0;
+}
+
+main();on

@@ -1,0 +1,15 @@
+var x = 100;
+var z = 1000;
+
+def hello(x, y) {
+    var p = -10;
+
+    return (p + x + y + z);
+}
+
+def main() {
+    print hello(10, 20);
+    return 0;
+}
+
+main();

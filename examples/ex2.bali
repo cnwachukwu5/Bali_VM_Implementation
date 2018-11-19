@@ -1,0 +1,11 @@
+def h() {
+    var Y = 0;
+    var Z = True;
+
+    Y = 2 + 3;
+    print Y;
+    print Z;
+    print !Z;
+    return 0;
+}
+h();

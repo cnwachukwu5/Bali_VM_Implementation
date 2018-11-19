@@ -1,0 +1,8 @@
+var a = 10;
+def main(x) {
+    var b = 10;
+    print x - a - b;
+    return 0;
+}
+
+main(100);

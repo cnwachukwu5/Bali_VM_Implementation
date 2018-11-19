@@ -1,0 +1,12 @@
+var X = 0;
+var Y = 3;
+var Z = 10;
+
+def h() {
+    while (X < 10) {
+        X = X + 1;
+        print X;
+    };
+    return 0;
+}
+h();

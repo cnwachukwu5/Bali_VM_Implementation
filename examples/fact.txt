@@ -1,0 +1,45 @@
+push : 0
+push : pc+2
+jmp : :main
+exit
+----
+:fact
+push : bp
+mov : bp | sp-1
+push : [bp-2]
+push : 1
+eq
+if_false_jmp : :false_block1
+push : 1
+stack_mov : top | bp-3
+pop : bp
+jmp_from_top
+jmp : :end2
+:false_block1
+push : [bp-2]
+push : 0
+push : [bp-2]
+push : 1
+sub
+push : pc+2
+jmp : :fact
+pop_n : 1
+mul
+stack_mov : top | bp-3
+pop : bp
+jmp_from_top
+:end2
+----
+:main
+push : bp
+mov : bp | sp-1
+push : 0
+push : 3
+push : pc+2
+jmp : :fact
+pop_n : 1
+print
+push : 0
+stack_mov : top | bp-2
+pop : bp
+jmp_from_top
