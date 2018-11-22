@@ -1,4 +1,4 @@
-# Generated from /Users/smcho/PycharmProjects/BaliInterpreter5/src/Bali.g4 by ANTLR 4.7
+# Generated from Bali.g4 by ANTLR 4.7.1
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .BaliParser import BaliParser
@@ -86,6 +86,11 @@ class BaliVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by BaliParser#returnStatement.
     def visitReturnStatement(self, ctx:BaliParser.ReturnStatementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BaliParser#doWhileStatement.
+    def visitDoWhileStatement(self, ctx:BaliParser.DoWhileStatementContext):
         return self.visitChildren(ctx)
 
 

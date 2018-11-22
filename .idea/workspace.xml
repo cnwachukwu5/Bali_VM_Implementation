@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6b498e0-e730-49a1-86af-3a800af17a37" name="Default Changelist" comment="" />
+    <list default="true" id="e6b498e0-e730-49a1-86af-3a800af17a37" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/doWhile.bali" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BaliInterpreter5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BaliInterpreter5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AstNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/AstNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AstVisitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/AstVisitor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bali.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Bali.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bali.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/Bali.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaliLexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/BaliLexer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaliLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/BaliLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaliParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/BaliParser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaliVisitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/BaliVisitor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ByteCodeGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/ByteCodeGenerator.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,31 +49,122 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-521131288">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="bali" value="55" />
+          <entry key="g4" value="75" />
+          <entry key="py" value="423" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="ANTLR v4 grammar file" value="75" />
+          <entry key="PLAIN_TEXT" value="55" />
+          <entry key="Python" value="423" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="bali" value="1" />
+          <entry key="py" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="11" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Bali.g4">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="49" column="28" lean-forward="true" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ByteCodeGenerator.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AstNode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="391">
+              <caret line="158" column="26" selection-start-line="158" selection-start-column="6" selection-end-line="158" selection-end-column="26" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <marker date="1542908485765" expanded="true" signature="4372:4558" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VirtualMachine.py">
+        <entry file="file://$PROJECT_DIR$/AstVisitor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="219" selection-start-line="219" selection-end-line="220" />
+            <state relative-caret-position="510">
+              <caret line="120" column="16" lean-forward="true" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+                <marker date="1542908485704" expanded="true" signature="4267:4412" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BaliVisitor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="92" column="76" lean-forward="true" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ByteCodeGenerator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="243" column="19" lean-forward="true" selection-start-line="243" selection-start-column="19" selection-end-line="243" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+                <marker date="1542908485489" expanded="true" signature="8866:9313" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/examples/doWhile.bali">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ByteCodeUtility.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Info.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Program.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-56">
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -66,26 +172,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/ex7.bali">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/fact.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/examples/fact.txt" />
+        <option value="$PROJECT_DIR$/Bali.g4" />
+        <option value="$PROJECT_DIR$/AstNode.py" />
+        <option value="$PROJECT_DIR$/AstVisitor.py" />
+        <option value="$PROJECT_DIR$/ByteCodeGenerator.py" />
+        <option value="$PROJECT_DIR$/examples/doWhile.bali" />
       </list>
     </option>
   </component>
@@ -96,9 +196,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="x" value="1358" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -109,8 +210,13 @@
         <subPane>
           <expand>
             <path>
-              <item name="BaliInterpreter5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaliInterpreter5" type="462c0819:PsiDirectoryNode" />
+              <item name="Bali_VM_Implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Bali_VM_Implementation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Bali_VM_Implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Bali_VM_Implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -124,6 +230,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -151,10 +258,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="1358" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25416037" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2577121" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -186,36 +293,91 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Bali.g4">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/examples/fact.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/ex7.bali">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/fact.txt">
+    <entry file="file://$PROJECT_DIR$/Info.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaliVisitor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        <state relative-caret-position="442">
+          <caret line="92" column="76" lean-forward="true" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AstNode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="158" column="26" selection-start-line="158" selection-start-column="6" selection-end-line="158" selection-end-column="26" />
+          <folding>
+            <marker date="1542908485765" expanded="true" signature="4372:4558" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AstVisitor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="120" column="16" lean-forward="true" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1542908485704" expanded="true" signature="4267:4412" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ByteCodeUtility.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ByteCodeGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="243" column="19" lean-forward="true" selection-start-line="243" selection-start-column="19" selection-end-line="243" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1542908485489" expanded="true" signature="8866:9313" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VirtualMachine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="219" selection-start-line="219" selection-end-line="220" />
+        <state relative-caret-position="131">
+          <caret line="217" column="34" lean-forward="true" selection-start-line="217" selection-start-column="34" selection-end-line="217" selection-end-column="34" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ByteCodeGenerator.py">
+    <entry file="file://$PROJECT_DIR$/Program.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="-56">
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bali.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="49" column="28" lean-forward="true" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/doWhile.bali">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>

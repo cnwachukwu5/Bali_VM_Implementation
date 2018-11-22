@@ -1,4 +1,4 @@
-# Generated from /Users/smcho/PycharmProjects/BaliInterpreter5/src/Bali.g4 by ANTLR 4.7
+# Generated from Bali.g4 by ANTLR 4.7.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -7,8 +7,8 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\"")
-        buf.write("\u00c0\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3#")
+        buf.write("\u00ca\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\3\2\3\2\3\2\7\2\"\n\2\f\2\16\2%\13\2\3")
         buf.write("\3\3\3\3\3\3\3\5\3+\n\3\3\3\3\3\3\3\3\4\3\4\3\4\7\4\63")
@@ -18,71 +18,76 @@ def serializedATN():
         buf.write("\13\n\3\13\7\13[\n\13\f\13\16\13^\13\13\3\f\3\f\3\f\3")
         buf.write("\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f")
         buf.write("\3\f\3\f\3\f\3\f\5\fu\n\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f")
-        buf.write("\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\5\f\u0089")
-        buf.write("\n\f\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3")
-        buf.write("\16\3\16\3\16\3\16\5\16\u0099\n\16\3\16\3\16\3\16\3\16")
+        buf.write("\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3")
+        buf.write("\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\5\f\u0093\n\f\3\r\3\r\3")
+        buf.write("\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16")
+        buf.write("\3\16\5\16\u00a3\n\16\3\16\3\16\3\16\3\16\3\16\3\16\3")
+        buf.write("\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16")
         buf.write("\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16")
-        buf.write("\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16")
-        buf.write("\3\16\3\16\3\16\3\16\7\16\u00b9\n\16\f\16\16\16\u00bc")
-        buf.write("\13\16\3\17\3\17\3\17\2\3\32\20\2\4\6\b\n\f\16\20\22\24")
-        buf.write("\26\30\32\34\2\3\3\2\34\36\2\u00cf\2#\3\2\2\2\4&\3\2\2")
-        buf.write("\2\6/\3\2\2\2\b\67\3\2\2\2\n?\3\2\2\2\fD\3\2\2\2\16F\3")
-        buf.write("\2\2\2\20M\3\2\2\2\22V\3\2\2\2\24\\\3\2\2\2\26\u0088\3")
-        buf.write("\2\2\2\30\u008a\3\2\2\2\32\u0098\3\2\2\2\34\u00bd\3\2")
-        buf.write("\2\2\36\"\5\20\t\2\37\"\5\26\f\2 \"\5\4\3\2!\36\3\2\2")
-        buf.write("\2!\37\3\2\2\2! \3\2\2\2\"%\3\2\2\2#!\3\2\2\2#$\3\2\2")
-        buf.write("\2$\3\3\2\2\2%#\3\2\2\2&\'\7\3\2\2\'(\5\f\7\2(*\7\4\2")
-        buf.write("\2)+\5\6\4\2*)\3\2\2\2*+\3\2\2\2+,\3\2\2\2,-\7\5\2\2-")
-        buf.write(".\5\n\6\2.\5\3\2\2\2/\64\7\37\2\2\60\61\7\6\2\2\61\63")
-        buf.write("\7\37\2\2\62\60\3\2\2\2\63\66\3\2\2\2\64\62\3\2\2\2\64")
-        buf.write("\65\3\2\2\2\65\7\3\2\2\2\66\64\3\2\2\2\67<\5\32\16\28")
-        buf.write("9\7\6\2\29;\5\32\16\2:8\3\2\2\2;>\3\2\2\2<:\3\2\2\2<=")
-        buf.write("\3\2\2\2=\t\3\2\2\2><\3\2\2\2?@\7\7\2\2@A\5\22\n\2AB\5")
-        buf.write("\24\13\2BC\7\b\2\2C\13\3\2\2\2DE\7\37\2\2E\r\3\2\2\2F")
-        buf.write("G\5\f\7\2GI\7\4\2\2HJ\5\b\5\2IH\3\2\2\2IJ\3\2\2\2JK\3")
-        buf.write("\2\2\2KL\7\5\2\2L\17\3\2\2\2MN\7\t\2\2NO\5\30\r\2OP\7")
-        buf.write("\n\2\2PQ\5\32\16\2QR\7\13\2\2R\21\3\2\2\2SU\5\20\t\2T")
-        buf.write("S\3\2\2\2UX\3\2\2\2VT\3\2\2\2VW\3\2\2\2W\23\3\2\2\2XV")
-        buf.write("\3\2\2\2Y[\5\26\f\2ZY\3\2\2\2[^\3\2\2\2\\Z\3\2\2\2\\]")
-        buf.write("\3\2\2\2]\25\3\2\2\2^\\\3\2\2\2_`\5\30\r\2`a\7\n\2\2a")
-        buf.write("b\5\32\16\2bc\7\13\2\2c\u0089\3\2\2\2de\7\f\2\2ef\5\32")
-        buf.write("\16\2fg\7\13\2\2g\u0089\3\2\2\2hi\7\r\2\2ij\7\4\2\2jk")
-        buf.write("\5\32\16\2kl\7\5\2\2lm\7\7\2\2mn\5\24\13\2nt\7\b\2\2o")
-        buf.write("p\7\16\2\2pq\7\7\2\2qr\5\24\13\2rs\7\b\2\2su\3\2\2\2t")
-        buf.write("o\3\2\2\2tu\3\2\2\2uv\3\2\2\2vw\7\13\2\2w\u0089\3\2\2")
-        buf.write("\2xy\7\17\2\2yz\7\4\2\2z{\5\32\16\2{|\7\5\2\2|}\7\7\2")
-        buf.write("\2}~\5\24\13\2~\177\7\b\2\2\177\u0080\7\13\2\2\u0080\u0089")
-        buf.write("\3\2\2\2\u0081\u0082\5\32\16\2\u0082\u0083\7\13\2\2\u0083")
-        buf.write("\u0089\3\2\2\2\u0084\u0085\7\20\2\2\u0085\u0086\5\32\16")
-        buf.write("\2\u0086\u0087\7\13\2\2\u0087\u0089\3\2\2\2\u0088_\3\2")
-        buf.write("\2\2\u0088d\3\2\2\2\u0088h\3\2\2\2\u0088x\3\2\2\2\u0088")
-        buf.write("\u0081\3\2\2\2\u0088\u0084\3\2\2\2\u0089\27\3\2\2\2\u008a")
-        buf.write("\u008b\7\37\2\2\u008b\31\3\2\2\2\u008c\u008d\b\16\1\2")
-        buf.write("\u008d\u0099\5\16\b\2\u008e\u0099\5\30\r\2\u008f\u0099")
-        buf.write("\5\34\17\2\u0090\u0091\7\21\2\2\u0091\u0099\5\32\16\17")
-        buf.write("\u0092\u0093\7\22\2\2\u0093\u0099\5\32\16\16\u0094\u0095")
-        buf.write("\7\4\2\2\u0095\u0096\5\32\16\2\u0096\u0097\7\5\2\2\u0097")
-        buf.write("\u0099\3\2\2\2\u0098\u008c\3\2\2\2\u0098\u008e\3\2\2\2")
-        buf.write("\u0098\u008f\3\2\2\2\u0098\u0090\3\2\2\2\u0098\u0092\3")
-        buf.write("\2\2\2\u0098\u0094\3\2\2\2\u0099\u00ba\3\2\2\2\u009a\u009b")
-        buf.write("\f\r\2\2\u009b\u009c\7\23\2\2\u009c\u00b9\5\32\16\16\u009d")
-        buf.write("\u009e\f\f\2\2\u009e\u009f\7\21\2\2\u009f\u00b9\5\32\16")
-        buf.write("\r\u00a0\u00a1\f\13\2\2\u00a1\u00a2\7\24\2\2\u00a2\u00b9")
-        buf.write("\5\32\16\f\u00a3\u00a4\f\n\2\2\u00a4\u00a5\7\25\2\2\u00a5")
-        buf.write("\u00b9\5\32\16\13\u00a6\u00a7\f\t\2\2\u00a7\u00a8\7\26")
-        buf.write("\2\2\u00a8\u00b9\5\32\16\n\u00a9\u00aa\f\b\2\2\u00aa\u00ab")
-        buf.write("\7\27\2\2\u00ab\u00b9\5\32\16\t\u00ac\u00ad\f\7\2\2\u00ad")
-        buf.write("\u00ae\7\30\2\2\u00ae\u00b9\5\32\16\b\u00af\u00b0\f\6")
-        buf.write("\2\2\u00b0\u00b1\7\31\2\2\u00b1\u00b9\5\32\16\7\u00b2")
-        buf.write("\u00b3\f\5\2\2\u00b3\u00b4\7\32\2\2\u00b4\u00b9\5\32\16")
-        buf.write("\6\u00b5\u00b6\f\4\2\2\u00b6\u00b7\7\33\2\2\u00b7\u00b9")
-        buf.write("\5\32\16\5\u00b8\u009a\3\2\2\2\u00b8\u009d\3\2\2\2\u00b8")
-        buf.write("\u00a0\3\2\2\2\u00b8\u00a3\3\2\2\2\u00b8\u00a6\3\2\2\2")
-        buf.write("\u00b8\u00a9\3\2\2\2\u00b8\u00ac\3\2\2\2\u00b8\u00af\3")
-        buf.write("\2\2\2\u00b8\u00b2\3\2\2\2\u00b8\u00b5\3\2\2\2\u00b9\u00bc")
-        buf.write("\3\2\2\2\u00ba\u00b8\3\2\2\2\u00ba\u00bb\3\2\2\2\u00bb")
-        buf.write("\33\3\2\2\2\u00bc\u00ba\3\2\2\2\u00bd\u00be\t\2\2\2\u00be")
-        buf.write("\35\3\2\2\2\17!#*\64<IV\\t\u0088\u0098\u00b8\u00ba")
+        buf.write("\3\16\3\16\7\16\u00c3\n\16\f\16\16\16\u00c6\13\16\3\17")
+        buf.write("\3\17\3\17\2\3\32\20\2\4\6\b\n\f\16\20\22\24\26\30\32")
+        buf.write("\34\2\3\3\2\35\37\2\u00da\2#\3\2\2\2\4&\3\2\2\2\6/\3\2")
+        buf.write("\2\2\b\67\3\2\2\2\n?\3\2\2\2\fD\3\2\2\2\16F\3\2\2\2\20")
+        buf.write("M\3\2\2\2\22V\3\2\2\2\24\\\3\2\2\2\26\u0092\3\2\2\2\30")
+        buf.write("\u0094\3\2\2\2\32\u00a2\3\2\2\2\34\u00c7\3\2\2\2\36\"")
+        buf.write("\5\20\t\2\37\"\5\26\f\2 \"\5\4\3\2!\36\3\2\2\2!\37\3\2")
+        buf.write("\2\2! \3\2\2\2\"%\3\2\2\2#!\3\2\2\2#$\3\2\2\2$\3\3\2\2")
+        buf.write("\2%#\3\2\2\2&\'\7\3\2\2\'(\5\f\7\2(*\7\4\2\2)+\5\6\4\2")
+        buf.write("*)\3\2\2\2*+\3\2\2\2+,\3\2\2\2,-\7\5\2\2-.\5\n\6\2.\5")
+        buf.write("\3\2\2\2/\64\7 \2\2\60\61\7\6\2\2\61\63\7 \2\2\62\60\3")
+        buf.write("\2\2\2\63\66\3\2\2\2\64\62\3\2\2\2\64\65\3\2\2\2\65\7")
+        buf.write("\3\2\2\2\66\64\3\2\2\2\67<\5\32\16\289\7\6\2\29;\5\32")
+        buf.write("\16\2:8\3\2\2\2;>\3\2\2\2<:\3\2\2\2<=\3\2\2\2=\t\3\2\2")
+        buf.write("\2><\3\2\2\2?@\7\7\2\2@A\5\22\n\2AB\5\24\13\2BC\7\b\2")
+        buf.write("\2C\13\3\2\2\2DE\7 \2\2E\r\3\2\2\2FG\5\f\7\2GI\7\4\2\2")
+        buf.write("HJ\5\b\5\2IH\3\2\2\2IJ\3\2\2\2JK\3\2\2\2KL\7\5\2\2L\17")
+        buf.write("\3\2\2\2MN\7\t\2\2NO\5\30\r\2OP\7\n\2\2PQ\5\32\16\2QR")
+        buf.write("\7\13\2\2R\21\3\2\2\2SU\5\20\t\2TS\3\2\2\2UX\3\2\2\2V")
+        buf.write("T\3\2\2\2VW\3\2\2\2W\23\3\2\2\2XV\3\2\2\2Y[\5\26\f\2Z")
+        buf.write("Y\3\2\2\2[^\3\2\2\2\\Z\3\2\2\2\\]\3\2\2\2]\25\3\2\2\2")
+        buf.write("^\\\3\2\2\2_`\5\30\r\2`a\7\n\2\2ab\5\32\16\2bc\7\13\2")
+        buf.write("\2c\u0093\3\2\2\2de\7\f\2\2ef\5\32\16\2fg\7\13\2\2g\u0093")
+        buf.write("\3\2\2\2hi\7\r\2\2ij\7\4\2\2jk\5\32\16\2kl\7\5\2\2lm\7")
+        buf.write("\7\2\2mn\5\24\13\2nt\7\b\2\2op\7\16\2\2pq\7\7\2\2qr\5")
+        buf.write("\24\13\2rs\7\b\2\2su\3\2\2\2to\3\2\2\2tu\3\2\2\2uv\3\2")
+        buf.write("\2\2vw\7\13\2\2w\u0093\3\2\2\2xy\7\17\2\2yz\7\4\2\2z{")
+        buf.write("\5\32\16\2{|\7\5\2\2|}\7\7\2\2}~\5\24\13\2~\177\7\b\2")
+        buf.write("\2\177\u0080\7\13\2\2\u0080\u0093\3\2\2\2\u0081\u0082")
+        buf.write("\5\32\16\2\u0082\u0083\7\13\2\2\u0083\u0093\3\2\2\2\u0084")
+        buf.write("\u0085\7\20\2\2\u0085\u0086\5\32\16\2\u0086\u0087\7\13")
+        buf.write("\2\2\u0087\u0093\3\2\2\2\u0088\u0089\7\21\2\2\u0089\u008a")
+        buf.write("\7\7\2\2\u008a\u008b\5\24\13\2\u008b\u008c\7\b\2\2\u008c")
+        buf.write("\u008d\7\17\2\2\u008d\u008e\7\4\2\2\u008e\u008f\5\32\16")
+        buf.write("\2\u008f\u0090\7\5\2\2\u0090\u0091\7\13\2\2\u0091\u0093")
+        buf.write("\3\2\2\2\u0092_\3\2\2\2\u0092d\3\2\2\2\u0092h\3\2\2\2")
+        buf.write("\u0092x\3\2\2\2\u0092\u0081\3\2\2\2\u0092\u0084\3\2\2")
+        buf.write("\2\u0092\u0088\3\2\2\2\u0093\27\3\2\2\2\u0094\u0095\7")
+        buf.write(" \2\2\u0095\31\3\2\2\2\u0096\u0097\b\16\1\2\u0097\u00a3")
+        buf.write("\5\16\b\2\u0098\u00a3\5\30\r\2\u0099\u00a3\5\34\17\2\u009a")
+        buf.write("\u009b\7\22\2\2\u009b\u00a3\5\32\16\17\u009c\u009d\7\23")
+        buf.write("\2\2\u009d\u00a3\5\32\16\16\u009e\u009f\7\4\2\2\u009f")
+        buf.write("\u00a0\5\32\16\2\u00a0\u00a1\7\5\2\2\u00a1\u00a3\3\2\2")
+        buf.write("\2\u00a2\u0096\3\2\2\2\u00a2\u0098\3\2\2\2\u00a2\u0099")
+        buf.write("\3\2\2\2\u00a2\u009a\3\2\2\2\u00a2\u009c\3\2\2\2\u00a2")
+        buf.write("\u009e\3\2\2\2\u00a3\u00c4\3\2\2\2\u00a4\u00a5\f\r\2\2")
+        buf.write("\u00a5\u00a6\7\24\2\2\u00a6\u00c3\5\32\16\16\u00a7\u00a8")
+        buf.write("\f\f\2\2\u00a8\u00a9\7\22\2\2\u00a9\u00c3\5\32\16\r\u00aa")
+        buf.write("\u00ab\f\13\2\2\u00ab\u00ac\7\25\2\2\u00ac\u00c3\5\32")
+        buf.write("\16\f\u00ad\u00ae\f\n\2\2\u00ae\u00af\7\26\2\2\u00af\u00c3")
+        buf.write("\5\32\16\13\u00b0\u00b1\f\t\2\2\u00b1\u00b2\7\27\2\2\u00b2")
+        buf.write("\u00c3\5\32\16\n\u00b3\u00b4\f\b\2\2\u00b4\u00b5\7\30")
+        buf.write("\2\2\u00b5\u00c3\5\32\16\t\u00b6\u00b7\f\7\2\2\u00b7\u00b8")
+        buf.write("\7\31\2\2\u00b8\u00c3\5\32\16\b\u00b9\u00ba\f\6\2\2\u00ba")
+        buf.write("\u00bb\7\32\2\2\u00bb\u00c3\5\32\16\7\u00bc\u00bd\f\5")
+        buf.write("\2\2\u00bd\u00be\7\33\2\2\u00be\u00c3\5\32\16\6\u00bf")
+        buf.write("\u00c0\f\4\2\2\u00c0\u00c1\7\34\2\2\u00c1\u00c3\5\32\16")
+        buf.write("\5\u00c2\u00a4\3\2\2\2\u00c2\u00a7\3\2\2\2\u00c2\u00aa")
+        buf.write("\3\2\2\2\u00c2\u00ad\3\2\2\2\u00c2\u00b0\3\2\2\2\u00c2")
+        buf.write("\u00b3\3\2\2\2\u00c2\u00b6\3\2\2\2\u00c2\u00b9\3\2\2\2")
+        buf.write("\u00c2\u00bc\3\2\2\2\u00c2\u00bf\3\2\2\2\u00c3\u00c6\3")
+        buf.write("\2\2\2\u00c4\u00c2\3\2\2\2\u00c4\u00c5\3\2\2\2\u00c5\33")
+        buf.write("\3\2\2\2\u00c6\u00c4\3\2\2\2\u00c7\u00c8\t\2\2\2\u00c8")
+        buf.write("\35\3\2\2\2\17!#*\64<IV\\t\u0092\u00a2\u00c2\u00c4")
         return buf.getvalue()
 
 
@@ -98,8 +103,8 @@ class BaliParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'def'", "'('", "')'", "','", "'{'", "'}'", 
                      "'var'", "'='", "';'", "'print'", "'if'", "'else'", 
-                     "'while'", "'return'", "'-'", "'!'", "'+'", "'*'", 
-                     "'/'", "'&'", "'|'", "'<'", "'>'", "'=='", "'!='", 
+                     "'while'", "'return'", "'do'", "'-'", "'!'", "'+'", 
+                     "'*'", "'/'", "'&'", "'|'", "'<'", "'>'", "'=='", "'!='", 
                      "'True'", "'False'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
@@ -109,7 +114,7 @@ class BaliParser ( Parser ):
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "INTEGER", "ID", "WS", "COMMENT", "MULTILINE_COMMENT" ]
+                      "<INVALID>", "INTEGER", "ID", "WS", "COMMENT", "MULTILINE_COMMENT" ]
 
     RULE_program = 0
     RULE_function = 1
@@ -158,15 +163,16 @@ class BaliParser ( Parser ):
     T__24=25
     T__25=26
     T__26=27
-    INTEGER=28
-    ID=29
-    WS=30
-    COMMENT=31
-    MULTILINE_COMMENT=32
+    T__27=28
+    INTEGER=29
+    ID=30
+    WS=31
+    COMMENT=32
+    MULTILINE_COMMENT=33
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.7")
+        self.checkVersion("4.7.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -221,7 +227,7 @@ class BaliParser ( Parser ):
             self.state = 33
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << BaliParser.T__0) | (1 << BaliParser.T__1) | (1 << BaliParser.T__6) | (1 << BaliParser.T__9) | (1 << BaliParser.T__10) | (1 << BaliParser.T__12) | (1 << BaliParser.T__13) | (1 << BaliParser.T__14) | (1 << BaliParser.T__15) | (1 << BaliParser.T__25) | (1 << BaliParser.T__26) | (1 << BaliParser.INTEGER) | (1 << BaliParser.ID))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << BaliParser.T__0) | (1 << BaliParser.T__1) | (1 << BaliParser.T__6) | (1 << BaliParser.T__9) | (1 << BaliParser.T__10) | (1 << BaliParser.T__12) | (1 << BaliParser.T__13) | (1 << BaliParser.T__14) | (1 << BaliParser.T__15) | (1 << BaliParser.T__16) | (1 << BaliParser.T__26) | (1 << BaliParser.T__27) | (1 << BaliParser.INTEGER) | (1 << BaliParser.ID))) != 0):
                 self.state = 31
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
@@ -229,7 +235,7 @@ class BaliParser ( Parser ):
                     self.state = 28
                     self.declaration()
                     pass
-                elif token in [BaliParser.T__1, BaliParser.T__9, BaliParser.T__10, BaliParser.T__12, BaliParser.T__13, BaliParser.T__14, BaliParser.T__15, BaliParser.T__25, BaliParser.T__26, BaliParser.INTEGER, BaliParser.ID]:
+                elif token in [BaliParser.T__1, BaliParser.T__9, BaliParser.T__10, BaliParser.T__12, BaliParser.T__13, BaliParser.T__14, BaliParser.T__15, BaliParser.T__16, BaliParser.T__26, BaliParser.T__27, BaliParser.INTEGER, BaliParser.ID]:
                     self.state = 29
                     self.statement()
                     pass
@@ -547,7 +553,7 @@ class BaliParser ( Parser ):
             self.state = 71
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << BaliParser.T__1) | (1 << BaliParser.T__14) | (1 << BaliParser.T__15) | (1 << BaliParser.T__25) | (1 << BaliParser.T__26) | (1 << BaliParser.INTEGER) | (1 << BaliParser.ID))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << BaliParser.T__1) | (1 << BaliParser.T__15) | (1 << BaliParser.T__16) | (1 << BaliParser.T__26) | (1 << BaliParser.T__27) | (1 << BaliParser.INTEGER) | (1 << BaliParser.ID))) != 0):
                 self.state = 70
                 self.arguments()
 
@@ -697,7 +703,7 @@ class BaliParser ( Parser ):
             self.state = 90
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << BaliParser.T__1) | (1 << BaliParser.T__9) | (1 << BaliParser.T__10) | (1 << BaliParser.T__12) | (1 << BaliParser.T__13) | (1 << BaliParser.T__14) | (1 << BaliParser.T__15) | (1 << BaliParser.T__25) | (1 << BaliParser.T__26) | (1 << BaliParser.INTEGER) | (1 << BaliParser.ID))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << BaliParser.T__1) | (1 << BaliParser.T__9) | (1 << BaliParser.T__10) | (1 << BaliParser.T__12) | (1 << BaliParser.T__13) | (1 << BaliParser.T__14) | (1 << BaliParser.T__15) | (1 << BaliParser.T__16) | (1 << BaliParser.T__26) | (1 << BaliParser.T__27) | (1 << BaliParser.INTEGER) | (1 << BaliParser.ID))) != 0):
                 self.state = 87
                 self.statement()
                 self.state = 92
@@ -802,6 +808,26 @@ class BaliParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
+    class DoWhileStatementContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BaliParser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def statements(self):
+            return self.getTypedRuleContext(BaliParser.StatementsContext,0)
+
+        def exp(self):
+            return self.getTypedRuleContext(BaliParser.ExpContext,0)
+
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDoWhileStatement" ):
+                return visitor.visitDoWhileStatement(self)
+            else:
+                return visitor.visitChildren(self)
+
+
     class IfStatementContext(StatementContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a BaliParser.StatementContext
@@ -849,7 +875,7 @@ class BaliParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_statement)
         self._la = 0 # Token type
         try:
-            self.state = 134
+            self.state = 144
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
             if la_ == 1:
@@ -952,6 +978,29 @@ class BaliParser ( Parser ):
                 self.match(BaliParser.T__8)
                 pass
 
+            elif la_ == 7:
+                localctx = BaliParser.DoWhileStatementContext(self, localctx)
+                self.enterOuterAlt(localctx, 7)
+                self.state = 134
+                self.match(BaliParser.T__14)
+                self.state = 135
+                self.match(BaliParser.T__4)
+                self.state = 136
+                self.statements()
+                self.state = 137
+                self.match(BaliParser.T__5)
+                self.state = 138
+                self.match(BaliParser.T__12)
+                self.state = 139
+                self.match(BaliParser.T__1)
+                self.state = 140
+                self.exp(0)
+                self.state = 141
+                self.match(BaliParser.T__2)
+                self.state = 142
+                self.match(BaliParser.T__8)
+                pass
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -988,7 +1037,7 @@ class BaliParser ( Parser ):
         self.enterRule(localctx, 22, self.RULE_location)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 136
+            self.state = 146
             self.match(BaliParser.ID)
         except RecognitionException as re:
             localctx.exception = re
@@ -1325,7 +1374,7 @@ class BaliParser ( Parser ):
         self.enterRecursionRule(localctx, 24, self.RULE_exp, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 150
+            self.state = 160
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
             if la_ == 1:
@@ -1333,7 +1382,7 @@ class BaliParser ( Parser ):
                 self._ctx = localctx
                 _prevctx = localctx
 
-                self.state = 139
+                self.state = 149
                 self.function_call()
                 pass
 
@@ -1341,7 +1390,7 @@ class BaliParser ( Parser ):
                 localctx = BaliParser.LocationExpContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 140
+                self.state = 150
                 self.location()
                 pass
 
@@ -1349,7 +1398,7 @@ class BaliParser ( Parser ):
                 localctx = BaliParser.LiteralExpContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 141
+                self.state = 151
                 self.literal()
                 pass
 
@@ -1357,9 +1406,9 @@ class BaliParser ( Parser ):
                 localctx = BaliParser.NegExpContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 142
-                self.match(BaliParser.T__14)
-                self.state = 143
+                self.state = 152
+                self.match(BaliParser.T__15)
+                self.state = 153
                 self.exp(13)
                 pass
 
@@ -1367,9 +1416,9 @@ class BaliParser ( Parser ):
                 localctx = BaliParser.NotExpContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 144
-                self.match(BaliParser.T__15)
-                self.state = 145
+                self.state = 154
+                self.match(BaliParser.T__16)
+                self.state = 155
                 self.exp(12)
                 pass
 
@@ -1377,17 +1426,17 @@ class BaliParser ( Parser ):
                 localctx = BaliParser.ParenthExpContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 146
+                self.state = 156
                 self.match(BaliParser.T__1)
-                self.state = 147
+                self.state = 157
                 self.exp(0)
-                self.state = 148
+                self.state = 158
                 self.match(BaliParser.T__2)
                 pass
 
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 184
+            self.state = 194
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,12,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1395,141 +1444,141 @@ class BaliParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 182
+                    self.state = 192
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
                     if la_ == 1:
                         localctx = BaliParser.AddExpContext(self, BaliParser.ExpContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_exp)
-                        self.state = 152
+                        self.state = 162
                         if not self.precpred(self._ctx, 11):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 11)")
-                        self.state = 153
-                        self.match(BaliParser.T__16)
-                        self.state = 154
+                        self.state = 163
+                        self.match(BaliParser.T__17)
+                        self.state = 164
                         self.exp(12)
                         pass
 
                     elif la_ == 2:
                         localctx = BaliParser.SubExpContext(self, BaliParser.ExpContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_exp)
-                        self.state = 155
+                        self.state = 165
                         if not self.precpred(self._ctx, 10):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 10)")
-                        self.state = 156
-                        self.match(BaliParser.T__14)
-                        self.state = 157
+                        self.state = 166
+                        self.match(BaliParser.T__15)
+                        self.state = 167
                         self.exp(11)
                         pass
 
                     elif la_ == 3:
                         localctx = BaliParser.MulExpContext(self, BaliParser.ExpContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_exp)
-                        self.state = 158
+                        self.state = 168
                         if not self.precpred(self._ctx, 9):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
-                        self.state = 159
-                        self.match(BaliParser.T__17)
-                        self.state = 160
+                        self.state = 169
+                        self.match(BaliParser.T__18)
+                        self.state = 170
                         self.exp(10)
                         pass
 
                     elif la_ == 4:
                         localctx = BaliParser.DivExpContext(self, BaliParser.ExpContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_exp)
-                        self.state = 161
+                        self.state = 171
                         if not self.precpred(self._ctx, 8):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 8)")
-                        self.state = 162
-                        self.match(BaliParser.T__18)
-                        self.state = 163
+                        self.state = 172
+                        self.match(BaliParser.T__19)
+                        self.state = 173
                         self.exp(9)
                         pass
 
                     elif la_ == 5:
                         localctx = BaliParser.AndExpContext(self, BaliParser.ExpContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_exp)
-                        self.state = 164
+                        self.state = 174
                         if not self.precpred(self._ctx, 7):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 7)")
-                        self.state = 165
-                        self.match(BaliParser.T__19)
-                        self.state = 166
+                        self.state = 175
+                        self.match(BaliParser.T__20)
+                        self.state = 176
                         self.exp(8)
                         pass
 
                     elif la_ == 6:
                         localctx = BaliParser.OrExpContext(self, BaliParser.ExpContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_exp)
-                        self.state = 167
+                        self.state = 177
                         if not self.precpred(self._ctx, 6):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
-                        self.state = 168
-                        self.match(BaliParser.T__20)
-                        self.state = 169
+                        self.state = 178
+                        self.match(BaliParser.T__21)
+                        self.state = 179
                         self.exp(7)
                         pass
 
                     elif la_ == 7:
                         localctx = BaliParser.LessThanExpContext(self, BaliParser.ExpContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_exp)
-                        self.state = 170
+                        self.state = 180
                         if not self.precpred(self._ctx, 5):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
-                        self.state = 171
-                        self.match(BaliParser.T__21)
-                        self.state = 172
+                        self.state = 181
+                        self.match(BaliParser.T__22)
+                        self.state = 182
                         self.exp(6)
                         pass
 
                     elif la_ == 8:
                         localctx = BaliParser.MoreThanExpContext(self, BaliParser.ExpContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_exp)
-                        self.state = 173
+                        self.state = 183
                         if not self.precpred(self._ctx, 4):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
-                        self.state = 174
-                        self.match(BaliParser.T__22)
-                        self.state = 175
+                        self.state = 184
+                        self.match(BaliParser.T__23)
+                        self.state = 185
                         self.exp(5)
                         pass
 
                     elif la_ == 9:
                         localctx = BaliParser.EqExpContext(self, BaliParser.ExpContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_exp)
-                        self.state = 176
+                        self.state = 186
                         if not self.precpred(self._ctx, 3):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
-                        self.state = 177
-                        self.match(BaliParser.T__23)
-                        self.state = 178
+                        self.state = 187
+                        self.match(BaliParser.T__24)
+                        self.state = 188
                         self.exp(4)
                         pass
 
                     elif la_ == 10:
                         localctx = BaliParser.NotEqExpContext(self, BaliParser.ExpContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_exp)
-                        self.state = 179
+                        self.state = 189
                         if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
-                        self.state = 180
-                        self.match(BaliParser.T__24)
-                        self.state = 181
+                        self.state = 190
+                        self.match(BaliParser.T__25)
+                        self.state = 191
                         self.exp(3)
                         pass
 
              
-                self.state = 186
+                self.state = 196
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,12,self._ctx)
 
@@ -1569,9 +1618,9 @@ class BaliParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 187
+            self.state = 197
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << BaliParser.T__25) | (1 << BaliParser.T__26) | (1 << BaliParser.INTEGER))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << BaliParser.T__26) | (1 << BaliParser.T__27) | (1 << BaliParser.INTEGER))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)

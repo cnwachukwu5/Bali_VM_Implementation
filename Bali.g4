@@ -47,6 +47,7 @@ statement
     | 'while' '(' exp ')' '{' statements '}' ';'                             # whileStatement
     | exp ';'                                                                # expStatement
     | 'return' exp ';'                                                       # returnStatement
+    | 'do' '{' statements '}' 'while' '(' exp ')' ';'                        # doWhileStatement
     ;
 
 location

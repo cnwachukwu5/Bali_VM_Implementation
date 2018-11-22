@@ -229,6 +229,20 @@ class ByteCodeGenerator(object):
                [ByteCode("jmp", start_label), ByteCode(end_label)]
         return code
 
+    def visitDoWhileStatement(self, statementNode):
+        decision = self.visit(statementNode.exp)
+        statements = self.visit(statementNode.statements)
+
+        start_label = ":start{}".format(get_label())
+        end_label = ":end{}".format(get_label())
+
+        code = [ByteCode(start_label)] + statements + \
+                decision + \
+               [ByteCode("if_false_jmp", end_label)] + \
+               [ByteCode("jmp", start_label), ByteCode(end_label)]
+
+        return code
+
     def visitPrintStatement(self, statementNode):
         code = self.visit(statementNode.exp) + [ByteCode("print")]
         return code

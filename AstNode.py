@@ -155,6 +155,15 @@ class WhileStatementNode(StatementNode):
         return visitor.visitWhileStatement(self)
 
 
+# | 'do' '{' statements '}' 'while' '(' exp ')' ';'                        # doWhileStatement
+class DoWhileStatementNode(StatementNode):
+    def __init__(self, exp, statements):
+        self.exp = exp
+        self.statements = statements
+
+    def accept(self, visitor):
+        return visitor.visitDoWhileStatement(self)
+
 #    | exp ';'                                                                # expStatement
 class ExpStatementNode(StatementNode):
     def __init__(self, exp):

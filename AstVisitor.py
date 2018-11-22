@@ -117,6 +117,12 @@ class AstVisitor(BaliVisitor):
         statements = self.visit(ctx.statements())
         return WhileStatementNode(exp, statements)
 
+    # | 'do' '{' statements '}' 'while' '(' exp ')' ';'                        # doWhileStatement
+    def visitDoWhileStatement(self, ctx:BaliParser.DoWhileStatementContext):
+        exp = self.visit(ctx.exp())
+        statements = self.visit(ctx.statements())
+        return DoWhileStatementNode(exp, statements)
+
     #     | exp ';'                                                                # expStatement
     def visitExpStatement(self, ctx: BaliParser.ExpStatementContext):
         exp = self.visit(ctx.exp())
