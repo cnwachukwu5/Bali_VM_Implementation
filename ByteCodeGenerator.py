@@ -152,6 +152,12 @@ class ByteCodeGenerator(object):
             code += self.visit(node)
         return code
 
+    def visitArrayvalueExp(self, ArrayValueExpNode):
+        code = []
+        arrayvalues = ArrayValueExpNode.arrayvalues
+        code += [ByteCode("push", arrayvalues)]
+        return code
+
     def visitFunction_body(self, function_bodyNode):
         code = []
         for node in function_bodyNode.declarationsNode.declarationNodes:
