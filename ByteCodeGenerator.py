@@ -158,6 +158,16 @@ class ByteCodeGenerator(object):
         code += [ByteCode("push", arrayvalues)]
         return code
 
+    def visitForeachStatement(self, statementNode):
+        code = []
+        list = self.visit(statementNode.exp)
+        location = self.visit(statementNode.location)
+        statements = self.visit(statementNode.statements)
+
+        for location in list:
+            statements
+        return code
+
     def visitFunction_body(self, function_bodyNode):
         code = []
         for node in function_bodyNode.declarationsNode.declarationNodes:

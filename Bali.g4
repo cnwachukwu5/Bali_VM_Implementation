@@ -48,15 +48,22 @@ statement
     | exp ';'                                                                # expStatement
     | 'return' exp ';'                                                       # returnStatement
     | 'do' '{' statements '}' 'while' '(' exp ')' ';'                        # doWhileStatement
+    | 'foreach' '('location ':' exp ')' '{' statements '}' ';'               # foreachStatement
     ;
 
 location
     : ID
     ;
 
+arrayvalues
+    : (STRING (',' STRING)*)*
+    | (INTEGER (',' INTEGER)*)*
+    ;
+
 exp
     : function_call                 # FunctionCallExp
     | location                      # LocationExp
+    | '{'arrayvalues'}'             # arrayvalueExp
     | literal                       # LiteralExp
     | '-' exp                       # NegExp
     | '!' exp                       # NotExp
@@ -74,11 +81,15 @@ exp
     ;
 
 literal
-    : INTEGER | 'True' | 'False'
+    : INTEGER | 'True' | 'False' | STRING
     ;
 
 INTEGER
     : '-'? DIGIT+
+    ;
+
+STRING
+    : '"'.*?'"'|'\''.*?'\''
     ;
 
 ID

@@ -94,8 +94,18 @@ class BaliVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by BaliParser#foreachStatement.
+    def visitForeachStatement(self, ctx:BaliParser.ForeachStatementContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by BaliParser#location.
     def visitLocation(self, ctx:BaliParser.LocationContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BaliParser#arrayvalues.
+    def visitArrayvalues(self, ctx:BaliParser.ArrayvaluesContext):
         return self.visitChildren(ctx)
 
 
@@ -136,6 +146,11 @@ class BaliVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by BaliParser#FunctionCallExp.
     def visitFunctionCallExp(self, ctx:BaliParser.FunctionCallExpContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BaliParser#arrayvalueExp.
+    def visitArrayvalueExp(self, ctx:BaliParser.ArrayvalueExpContext):
         return self.visitChildren(ctx)
 
 

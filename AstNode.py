@@ -124,7 +124,6 @@ class AssignStatementNode(StatementNode):
     def accept(self, visitor):
         return visitor.visitAssignStatement(self)
 
-
 #     | 'print' exp ';'                                                        # printStatement
 class PrintStatementNode(StatementNode):
     def __init__(self, exp):
@@ -133,6 +132,15 @@ class PrintStatementNode(StatementNode):
     def accept(self, visitor):
         return visitor.visitPrintStatement(self)
 
+#  | 'foreach' '('location ':' exp ')' '{' statements '}' ';'               # foreachStatement
+class ForEachStatementNode(StatementNode):
+    def __init__(self, location, exp, statements):
+        self.location = location
+        self.exp = exp
+        self.statements = statements
+
+    def accept(self, visitor):
+        return visitor.visitForeachStatement(self)
 
 #     | 'if' '(' exp ')' '{' statements '}' ('else' '{' statements '}')? ';'   # ifStatement
 class IfStatementNode(StatementNode):
@@ -191,6 +199,25 @@ class LocationNode(Node):
 
     def accept(self, visitor):
         return visitor.visitLocation(self)
+
+# arrayvalue
+#     : STRING (',' STRING)*
+#     | INTEGER (',' INTEGER)*
+#     ;
+class ArrayValueNode(Node):
+    def __init__(self, arrayvalue):
+        self.arrayvalue = arrayvalue
+
+    def accept(self, visitor):
+        return visitor.visitArrayvalues(self)
+
+# | arrayvalues                                                                            # arrayvalueExp
+class ArrayValueExpNode(Node):
+    def __init__(self, arrayvalues):
+        self.arrayvalues = arrayvalues
+
+    def accept(self, visitor):
+        return visitor.visitArrayvalueExp(self)
 
 
 # : function_call                 # FunctionCallExp

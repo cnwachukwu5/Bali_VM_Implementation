@@ -1,0 +1,6 @@
+var firstArray = {23, 90};
+var secondArray = {"Chidi", "Apekshay"}
+print firstArray;
+firstArray = {34, 67};
+print firstArray;
+print secondArray;

@@ -45,6 +45,32 @@ class AstVisitor(BaliVisitor):
             result.append(self.visit(exp))
         return ArgumentsNode(result)
 
+    # arrayvalues
+    #     : (STRING (',' STRING)*)*
+    #     | (INTEGER (',' INTEGER)*)*
+    #     ;
+    def visitArrayvalues(self, ctx: BaliParser.ArrayvaluesContext):
+        arrayvalues = []
+        # TODO - escape quotes in strings
+        if ctx.STRING() is not None:
+            for value in ctx.STRING():
+                arrayvalues.append(value.getText())
+
+        if ctx.INTEGER() is not None:
+            for value in ctx.INTEGER():
+                arrayvalues.append(int(value.getText()))
+
+        return ArrayValueNode(arrayvalues)
+
+    # | arrayvalues                                                             # arrayvalueExp
+    def visitArrayvalueExp(self, ctx: BaliParser.ArrayvalueExpContext):
+
+        arrayValueNode = None
+        if ctx.arrayvalues() is not None:
+            arrayValueNode = self.visitArrayvalues(ctx.arrayvalues())
+
+        return ArrayValueExpNode(arrayValueNode.arrayvalue)
+
     # function_body
     #     : '{' (declaration | statement)* '}'
     #     ;
@@ -117,11 +143,22 @@ class AstVisitor(BaliVisitor):
         statements = self.visit(ctx.statements())
         return WhileStatementNode(exp, statements)
 
-    # | 'do' '{' statements '}' 'while' '(' exp ')' ';'                        # doWhileStatement
+    # | 'do' '{' statements '}' 'while' '(' exp ')' ';'                           # doWhileStatement
     def visitDoWhileStatement(self, ctx:BaliParser.DoWhileStatementContext):
         exp = self.visit(ctx.exp())
         statements = self.visit(ctx.statements())
         return DoWhileStatementNode(exp, statements)
+
+    #  | 'foreach' '('location ':' exp ')' '{' statements '}' ';'                 # foreachStatement
+    def visitForeachStatement(self, ctx: BaliParser.ForeachStatementContext):
+        exp = self.visit(ctx.exp())
+        print(type(exp))
+        location = self.visit(ctx.location())
+        print(type(location))
+        statements = self.visit(ctx.statements())
+        print(type(statements))
+
+        return ForEachStatementNode(location, exp, statements)
 
     #     | exp ';'                                                                # expStatement
     def visitExpStatement(self, ctx: BaliParser.ExpStatementContext):
@@ -224,14 +261,16 @@ class AstVisitor(BaliVisitor):
         return self.visit(ctx.exp())
 
     # literal
-    #     : INTEGER | 'True' | 'False'
-    #     ;
+    #     : INTEGER | 'True' | 'False' | STRING
     def visitLiteralExp(self, ctx: BaliParser.LiteralContext):
         txt = ctx.getText()
         if txt in ['True', 'False']:
             literalType = 'boolean'
             value = txt
-        else:
+        elif txt.isnumeric():
             literalType = 'int'
             value = int(txt)
+        else:
+            literalType = 'str'
+            value = txt
         return LiteralNode(literalType, value)
