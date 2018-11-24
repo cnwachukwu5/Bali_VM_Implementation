@@ -198,6 +198,30 @@ class BaliVirtualMachine(object):
                 raise Exception("Variable {} is not defined".format(variable))
             return 0
 
+        elif byte_code.command == "copyarray":
+            arrayCopy = self.stack.pop()
+            self.global_variables["copyArr"] = arrayCopy
+            # self.stack.push(self.global_variables[byte_code.arg1])
+            self.global_variables["count"] = 0
+
+            return 0
+
+        elif byte_code.command == "checkarraylength":
+            copyArr = self.global_variables["copyArr"]
+            count = self.global_variables["count"]
+            self.stack.push(len(copyArr) > count)
+            return 0
+
+        elif byte_code.command == "get_element_value":
+            copyArr = self.global_variables["copyArr"]
+            count = self.global_variables["count"]
+            elem_value = copyArr[count]
+            self.global_variables[byte_code.arg1] = elem_value
+            count = count + 1
+            self.global_variables["count"] = count
+
+            return 0
+
         elif byte_code.command == "store":
             variable = self.stack.pop()
             exp = self.stack.pop()

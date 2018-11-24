@@ -158,16 +158,6 @@ class ByteCodeGenerator(object):
         code += [ByteCode("push", arrayvalues)]
         return code
 
-    def visitForeachStatement(self, statementNode):
-        code = []
-        list = self.visit(statementNode.exp)
-        location = self.visit(statementNode.location)
-        statements = self.visit(statementNode.statements)
-
-        for location in list:
-            statements
-        return code
-
     def visitFunction_body(self, function_bodyNode):
         code = []
         for node in function_bodyNode.declarationsNode.declarationNodes:
@@ -256,6 +246,28 @@ class ByteCodeGenerator(object):
                 decision + \
                [ByteCode("if_false_jmp", end_label)] + \
                [ByteCode("jmp", start_label), ByteCode(end_label)]
+
+        return code
+
+    def visitForeachStatement(self, statementNode):
+        code = []
+
+        array_ref = self.find_value(statementNode.exp.location)
+        location = statementNode.location.location
+        statements = self.visit(statementNode.statements)
+
+        start_label = ":start{}".format(get_label())
+        end_label = ":end{}".format(get_label())
+
+        code += [ByteCode("push", array_ref)]
+        code += [ByteCode("value")]
+        code += [ByteCode("copyarray", array_ref)]
+        code += [ByteCode(start_label)]
+        code += [ByteCode("checkarraylength")]
+        code += [ByteCode("if_false_jmp", end_label)]
+        code += [ByteCode("get_element_value", location)]
+        code += statements
+        code += [ByteCode("jmp", start_label), ByteCode(end_label)]
 
         return code
 

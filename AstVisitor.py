@@ -152,11 +152,8 @@ class AstVisitor(BaliVisitor):
     #  | 'foreach' '('location ':' exp ')' '{' statements '}' ';'                 # foreachStatement
     def visitForeachStatement(self, ctx: BaliParser.ForeachStatementContext):
         exp = self.visit(ctx.exp())
-        print(type(exp))
         location = self.visit(ctx.location())
-        print(type(location))
         statements = self.visit(ctx.statements())
-        print(type(statements))
 
         return ForEachStatementNode(location, exp, statements)
 

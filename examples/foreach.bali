@@ -1,1 +1,5 @@
-var firstArray = {23, 90};
+var firstArray = {23, 90, 123, 45};
+var x = 0;
+foreach(x : firstArray){
+    print x*2;
+};
