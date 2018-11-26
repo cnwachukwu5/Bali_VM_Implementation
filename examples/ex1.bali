@@ -1,7 +1,0 @@
-def h() {
-    var X = 1;
-    var Y = 2;
-    print X + Y*4;
-    return 0;
-}
-h();

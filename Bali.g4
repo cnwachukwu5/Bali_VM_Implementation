@@ -29,7 +29,7 @@ function_call
     ;
 
 declaration
-    : 'var' location '=' exp ';'
+    : datatype location '=' exp ';'
     ;
 
 declarations
@@ -49,6 +49,8 @@ statement
     | 'return' exp ';'                                                       # returnStatement
     | 'do' '{' statements '}' 'while' '(' exp ')' ';'                        # doWhileStatement
     | 'foreach' '('location ':' exp ')' '{' statements '}' ';'               # foreachStatement
+    | 'switch' '(' exp ')' '{' statements '}'                                # switchStatement
+    | 'case' exp ':' statement 'break' ';'                                   # caseStatement
     ;
 
 location
@@ -80,8 +82,16 @@ exp
     | '(' exp ')'                   # ParenthExp
     ;
 
+datatype
+    : 'int' | 'boolean' | 'str' | 'char' | 'int[]' | 'char[]'
+    ;
+
 literal
-    : INTEGER | 'True' | 'False' | STRING
+    : INTEGER | 'True' | 'False' | STRING | CHAR
+    ;
+
+CHAR
+    :'\''[a-zA-Z]'\''
     ;
 
 INTEGER

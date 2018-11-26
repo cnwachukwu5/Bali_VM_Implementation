@@ -1,7 +1,7 @@
-var a = 0;
+int  a = 0;
 def hello(x, y) {
-    var p = -10;
-    var q = 20;
+    int p = -10;
+    int q = 20;
     return (a + x + y + p + q);
 }
 
@@ -10,4 +10,4 @@ def main() {
     return 0;
 }
 
-main();on
+main();

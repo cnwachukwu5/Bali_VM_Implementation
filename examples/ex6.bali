@@ -1,9 +1,8 @@
-var x = 100;
-var z = 1000;
+int x = 100;
+int z = 1000;
 
 def hello(x, y) {
-    var p = -10;
-
+    int p = -10;
     return (p + x + y + z);
 }
 

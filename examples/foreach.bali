@@ -1,5 +1,9 @@
-var firstArray = {23, 90, 123, 45};
-var x = 0;
+int x = 0;
+int[] firstArray = {23, 90, 123, 45};
+char[] secondArray = {"Hello", "hi"};
 foreach(x : firstArray){
     print x*2;
+};
+foreach(x : secondArray){
+    print x+x;
 };

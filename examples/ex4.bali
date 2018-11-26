@@ -1,6 +1,6 @@
-var X = 0;
-var Y = 3;
-var Z = 10;
+int X = 0;
+int Y = 3;
+int Z = 10;
 
 def h() {
     while (X < 10) {

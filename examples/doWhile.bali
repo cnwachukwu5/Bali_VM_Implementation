@@ -1,4 +1,4 @@
-var x = 5;
+int x = 5;
 do{
     print x;
     x = x - 1;

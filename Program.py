@@ -33,7 +33,7 @@ def main(argv):
     bcu.print(original = True)
     #bcu.print(original = False)
     #vm.run(debug=True)
-    vm.run(debug=True)
+    vm.run(debug=False)
 
 if __name__ == '__main__':
     main(sys.argv)

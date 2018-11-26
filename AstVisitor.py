@@ -2,6 +2,7 @@ from AstNode import *
 from BaliParser import BaliParser
 from BaliVisitor import BaliVisitor
 
+
 class AstVisitor(BaliVisitor):
     def __init__(self):
         self.programNode = None
@@ -18,7 +19,7 @@ class AstVisitor(BaliVisitor):
     # function
     #     : 'def' function_name '(' params? ')' function_body
     #     ;
-    def visitFunction(self, ctx:BaliParser.FunctionContext):
+    def visitFunction(self, ctx: BaliParser.FunctionContext):
         functionName = ctx.function_name().ID().getText()
         if ctx.params() is not None:
             parameterNodes = self.visit(ctx.params())
@@ -30,7 +31,7 @@ class AstVisitor(BaliVisitor):
     # params
     #     : ID (',' ID)*
     #     ;
-    def visitParams(self, ctx:BaliParser.ParamsContext):
+    def visitParams(self, ctx: BaliParser.ParamsContext):
         result = []
         for id in ctx.ID():
             result.append(id.getText())
@@ -39,7 +40,7 @@ class AstVisitor(BaliVisitor):
     # arguments
     #     : exp ( ',' exp )*
     #     ;
-    def visitArguments(self, ctx:BaliParser.ArgumentsContext):
+    def visitArguments(self, ctx: BaliParser.ArgumentsContext):
         result = []
         for exp in ctx.exp():
             result.append(self.visit(exp))
@@ -74,7 +75,7 @@ class AstVisitor(BaliVisitor):
     # function_body
     #     : '{' (declaration | statement)* '}'
     #     ;
-    def visitFunction_body(self, ctx:BaliParser.Function_bodyContext):
+    def visitFunction_body(self, ctx: BaliParser.Function_bodyContext):
         nodes = []
         declarationsNode = self.visit(ctx.declarations())
         statementsNode = self.visit(ctx.statements())
@@ -86,12 +87,29 @@ class AstVisitor(BaliVisitor):
     #
 
     # declaration
-    #     : 'var' location ('=' exp)? ';'
+    #     : datatype location ('=' exp)? ';'
     #     ;
     def visitDeclaration(self, ctx: BaliParser.DeclarationContext):
+        datatype = ctx.datatype().getText()
+
         variable = ctx.location().getText()
+
         if ctx.exp() is not None:
             value = self.visit(ctx.exp())
+
+            if isinstance(value, ArrayValueExpNode):
+                for val in value.arrayvalues:
+                    if isinstance(val, int):
+                        if not datatype == "int[]":
+                            raise Exception("Datatype does not match")
+                    elif isinstance(val, str):
+                        if not datatype == "char[]":
+                            raise Exception("Datatype does not match")
+            if isinstance(value, LiteralNode):
+                if datatype == self.visitLiteralExp(ctx.exp()).literalType:
+                    pass
+                else:
+                    raise Exception("Datatype does not match")
         else:
             value = None
         return DeclarationNode(variable, value)
@@ -137,6 +155,26 @@ class AstVisitor(BaliVisitor):
             elseStatements = None
         return IfStatementNode(exp, ifStatements, elseStatements)
 
+    # 'switch' '(' exp ')' '{' statements '}'
+
+    def visitSwitchStatement(self, ctx: BaliParser.SwitchStatementContext):
+        exp = self.visit(ctx.exp())
+        caseStatements = self.visit(ctx.statements())
+        for caseStatement in caseStatements.statements:
+            if exp.value == caseStatement.exp.value:
+                return SwitchStatementNode(exp, caseStatement)
+            # else:
+                # raise Exception("There is no valid case statement")
+
+
+
+
+    # case exp : statement break ;
+    def visitCaseStatement(self, ctx: BaliParser.CaseStatementContext):
+        exp = self.visit(ctx.exp())
+        statement = self.visit(ctx.statement())
+        return CaseStatementNode(exp, statement)
+
     #     | 'while' '(' exp ')' '{' statements '}' ';'                             # whileStatement
     def visitWhileStatement(self, ctx: BaliParser.WhileStatementContext):
         exp = self.visit(ctx.exp())
@@ -144,7 +182,7 @@ class AstVisitor(BaliVisitor):
         return WhileStatementNode(exp, statements)
 
     # | 'do' '{' statements '}' 'while' '(' exp ')' ';'                           # doWhileStatement
-    def visitDoWhileStatement(self, ctx:BaliParser.DoWhileStatementContext):
+    def visitDoWhileStatement(self, ctx: BaliParser.DoWhileStatementContext):
         exp = self.visit(ctx.exp())
         statements = self.visit(ctx.statements())
         return DoWhileStatementNode(exp, statements)
@@ -154,7 +192,6 @@ class AstVisitor(BaliVisitor):
         exp = self.visit(ctx.exp())
         location = self.visit(ctx.location())
         statements = self.visit(ctx.statements())
-
         return ForEachStatementNode(location, exp, statements)
 
     #     | exp ';'                                                                # expStatement
@@ -184,8 +221,8 @@ class AstVisitor(BaliVisitor):
         else:
             argumentNode = None
         return Function_callNode(function_name, argumentNode)
-    # exp
 
+    # exp
     # FunctionCallExp
     # function_name '(' arguments? ')'
     def visitFunctionCallExp(self, ctx: BaliParser.FunctionCallExpContext):
@@ -234,7 +271,7 @@ class AstVisitor(BaliVisitor):
         return self.binOpNode(ctx, 'and')
 
     #     | exp '|' exp                   # OrExp
-    def visitAndExp(self, ctx: BaliParser.LessThanExpContext):
+    def visitOrExp(self, ctx: BaliParser.LessThanExpContext):
         return self.binOpNode(ctx, 'or')
 
     #     | exp '<' exp                   # LessThanExp
@@ -264,10 +301,21 @@ class AstVisitor(BaliVisitor):
         if txt in ['True', 'False']:
             literalType = 'boolean'
             value = txt
-        elif txt.isnumeric():
+
+        elif txt.startswith('"') and txt.endswith('"'):
+            value = ''
+            for t in txt:
+                if t != '"':
+                    value += t
+            literalType = 'str'
+
+        elif txt.startswith('\'') and txt.endswith('\''):
+            literalType = 'char'
+            value = ''
+            for t in txt:
+                if t != '\'':
+                    value += t
+        else:
             literalType = 'int'
             value = int(txt)
-        else:
-            literalType = 'str'
-            value = txt
         return LiteralNode(literalType, value)

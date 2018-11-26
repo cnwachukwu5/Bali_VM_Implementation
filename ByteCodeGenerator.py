@@ -3,10 +3,12 @@ from Info import FunctionsInfo, FunctionInfo
 
 label = 0
 
+
 def get_label():
     global label
     label += 1
     return label
+
 
 class ByteCode(object):
     def __init__(self, command, arg1=None, arg2=None):
@@ -14,21 +16,22 @@ class ByteCode(object):
         self.arg1 = arg1
         self.arg2 = arg2
 
+
 class ByteCodeGenerator(object):
     def __init__(self):
-        self.global_variables = [] # global variables
+        self.global_variables = []  # global variables
         self.current_function_name = ""
-        self.functions_info = FunctionsInfo() # stores the name of the function -> number of parameters
+        self.functions_info = FunctionsInfo()  # stores the name of the function -> number of parameters
 
     #########################################
     # UTILITIES
     #########################################
 
-    def get_number_of_parameters(self, function_name = None):
+    def get_number_of_parameters(self, function_name=None):
         if function_name is None: function_name = self.current_function_name
         return self.functions_info.get_number_of_parameters(function_name)
 
-    def get_number_of_local_variables(self, function_name = None):
+    def get_number_of_local_variables(self, function_name=None):
         if function_name is None: function_name = self.current_function_name
         return self.functions_info.get_number_of_local_variables(function_name)
 
@@ -70,10 +73,10 @@ class ByteCodeGenerator(object):
 
     def set_location_name(self, location_name):
         if self.current_function_name:
-             name = self.functions_info.get_local_variable_location(self.current_function_name, location_name)
+            name = self.functions_info.get_local_variable_location(self.current_function_name, location_name)
         else:
-             name = location_name
-        #self.variables.append(name)
+            name = location_name
+        # self.variables.append(name)
         return name
 
     # def find_location(self, name):
@@ -115,8 +118,8 @@ class ByteCodeGenerator(object):
         number_of_local_variables = len(local_variable_names)
 
         self.functions_info[functionNode.functionName] = FunctionInfo(functionNode.functionName,
-                                                                     parameter_names,
-                                                                     local_variable_names)
+                                                                      parameter_names,
+                                                                      local_variable_names)
 
         code = [ByteCode("----"), ByteCode(function_name_label), ByteCode("push", "bp"), ByteCode("mov", "bp", "sp-1")]
 
@@ -137,10 +140,10 @@ class ByteCodeGenerator(object):
             argument_code += self.visit(function_callNode.argumentsNode)
 
         function_name_label = ":" + function_callNode.function_name
-        code += [ByteCode("push", 0)] # default return value is 0
+        code += [ByteCode("push", 0)]  # default return value is 0
         code += argument_code
-        code += [ByteCode("push", "pc+2")] # return address
-        code += [ByteCode("jmp", function_name_label)] # , callstack_data)]
+        code += [ByteCode("push", "pc+2")]  # return address
+        code += [ByteCode("jmp", function_name_label)]  # , callstack_data)]
         if number_of_arguments > 0:
             code += [ByteCode("pop_n", number_of_arguments)]
 
@@ -222,6 +225,18 @@ class ByteCodeGenerator(object):
                else_case + [ByteCode(end_label)]
         return code
 
+    def visitSwitchStatement(self, statementNode):
+        decision = self.visit(statementNode.exp)
+        caseStatements = self.visit(statementNode.caseStatements)
+        code = decision + caseStatements
+        return code
+
+    def visitCaseStatement(self, statementNode):
+        decision = self.visit(statementNode.exp)
+        case = self.visit(statementNode.statement)
+        code = decision + case
+        return code
+
     def visitWhileStatement(self, statementNode):
         decision = self.visit(statementNode.exp)
         statements = self.visit(statementNode.statements)
@@ -243,7 +258,7 @@ class ByteCodeGenerator(object):
         end_label = ":end{}".format(get_label())
 
         code = [ByteCode(start_label)] + statements + \
-                decision + \
+               decision + \
                [ByteCode("if_false_jmp", end_label)] + \
                [ByteCode("jmp", start_label), ByteCode(end_label)]
 
@@ -278,7 +293,7 @@ class ByteCodeGenerator(object):
     def visitAssignStatement(self, statementNode):
         code1 = self.visit(statementNode.exp)
         code2 = self.visit(statementNode.location)
-        if code2[0].arg1.startswith("bp"): # local variable or parameter
+        if code2[0].arg1.startswith("bp"):  # local variable or parameter
             bytecode = [ByteCode("memory_store")]
         else:
             bytecode = [ByteCode("store")]
@@ -294,7 +309,7 @@ class ByteCodeGenerator(object):
         location_name = self.find_value(locationExpNode.location)
         code = [ByteCode("push", location_name)]
         if not (location_name.startswith("[")):
-             code += [ByteCode("value")]
+            code += [ByteCode("value")]
         return code
 
     def visitBinOp(self, expression):

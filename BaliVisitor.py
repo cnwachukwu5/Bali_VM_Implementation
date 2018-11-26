@@ -99,6 +99,16 @@ class BaliVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by BaliParser#switchStatement.
+    def visitSwitchStatement(self, ctx:BaliParser.SwitchStatementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BaliParser#caseStatement.
+    def visitCaseStatement(self, ctx:BaliParser.CaseStatementContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by BaliParser#location.
     def visitLocation(self, ctx:BaliParser.LocationContext):
         return self.visitChildren(ctx)
@@ -191,6 +201,11 @@ class BaliVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by BaliParser#SubExp.
     def visitSubExp(self, ctx:BaliParser.SubExpContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BaliParser#datatype.
+    def visitDatatype(self, ctx:BaliParser.DatatypeContext):
         return self.visitChildren(ctx)
 
 

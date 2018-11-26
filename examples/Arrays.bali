@@ -1,5 +1,5 @@
-var firstArray = {23, 90};
-var secondArray = {"Chidi", "Apekshay"}
+int[] firstArray = {23, 90};
+char[] secondArray = {"Chidi", "Apekshya"};
 print firstArray;
 firstArray = {34, 67};
 print firstArray;
