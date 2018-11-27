@@ -52,10 +52,15 @@ class AstVisitor(BaliVisitor):
     #     ;
     def visitArrayvalues(self, ctx: BaliParser.ArrayvaluesContext):
         arrayvalues = []
+        stringvalue = ''
         # TODO - escape quotes in strings
         if ctx.STRING() is not None:
             for value in ctx.STRING():
-                arrayvalues.append(value.getText())
+                for text in value.getText():
+                    if text != '"':
+                        stringvalue += text
+                arrayvalues.append(stringvalue)
+                stringvalue = ''
 
         if ctx.INTEGER() is not None:
             for value in ctx.INTEGER():
@@ -159,15 +164,13 @@ class AstVisitor(BaliVisitor):
 
     def visitSwitchStatement(self, ctx: BaliParser.SwitchStatementContext):
         exp = self.visit(ctx.exp())
+        print(exp)
         caseStatements = self.visit(ctx.statements())
         for caseStatement in caseStatements.statements:
             if exp.value == caseStatement.exp.value:
                 return SwitchStatementNode(exp, caseStatement)
             # else:
-                # raise Exception("There is no valid case statement")
-
-
-
+            #     raise Exception("There is no valid case statement")
 
     # case exp : statement break ;
     def visitCaseStatement(self, ctx: BaliParser.CaseStatementContext):
