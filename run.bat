@@ -12,5 +12,5 @@ python Program.py examples/foreach.bali
 python Program.py examples/function.bali
 python Program.py examples/Arrays.bali
 python Program.py examples/doWhile.bali
-
+python Program.py examples/Switch.bali
 

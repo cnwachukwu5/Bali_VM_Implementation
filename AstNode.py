@@ -163,19 +163,21 @@ class IfStatementNode(StatementNode):
         return visitor.visitIfStatement(self)
 
 
-# case exp : statement break;
+# case exp : statements break;
 class CaseStatementNode(StatementNode):
-    def __init__(self, exp, statement):
+    def __init__(self, exp, caseStatements):
         self.exp = exp
-        self.statement = statement
+        self.caseStatements = caseStatements
+
 
     def accept(self, visitor):
         return visitor.visitCaseStatement(self)
 
-
+ # switch ( exp ) { casestatement1, casestatement2.... } ;
 class SwitchStatementNode(StatementNode):
-    def __init__(self, exp, caseStatements):
+    def __init__(self, exp, caseStatements, defaultStatements):
         self.exp = exp
+        self.defaultStatements = defaultStatements
         self.caseStatements = caseStatements
 
     def accept(self, visitor):

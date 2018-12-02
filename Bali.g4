@@ -49,8 +49,8 @@ statement
     | 'return' exp ';'                                                       # returnStatement
     | 'do' '{' statements '}' 'while' '(' exp ')' ';'                        # doWhileStatement
     | 'foreach' '('location ':' exp ')' '{' statements '}' ';'               # foreachStatement
-    | 'switch' '(' exp ')' '{' statements '}'                                # switchStatement
-    | 'case' exp ':' statement 'break' ';'                                   # caseStatement
+    | 'switch' '(' exp ')' '{' statements 'default' statements '}' ';'       # switchStatement
+    | 'case' exp ':' statements 'break' ';'                                  # caseStatement
     ;
 
 location

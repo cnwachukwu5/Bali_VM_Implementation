@@ -96,7 +96,6 @@ class AstVisitor(BaliVisitor):
     #     ;
     def visitDeclaration(self, ctx: BaliParser.DeclarationContext):
         datatype = ctx.datatype().getText()
-
         variable = ctx.location().getText()
 
         if ctx.exp() is not None:
@@ -110,6 +109,7 @@ class AstVisitor(BaliVisitor):
                     elif isinstance(val, str):
                         if not datatype == "char[]":
                             raise Exception("Datatype does not match")
+
             if isinstance(value, LiteralNode):
                 if datatype == self.visitLiteralExp(ctx.exp()).literalType:
                     pass
@@ -161,22 +161,19 @@ class AstVisitor(BaliVisitor):
         return IfStatementNode(exp, ifStatements, elseStatements)
 
     # 'switch' '(' exp ')' '{' statements '}'
-
     def visitSwitchStatement(self, ctx: BaliParser.SwitchStatementContext):
         exp = self.visit(ctx.exp())
-        print(exp)
-        caseStatements = self.visit(ctx.statements())
-        for caseStatement in caseStatements.statements:
-            if exp.value == caseStatement.exp.value:
-                return SwitchStatementNode(exp, caseStatement)
-            # else:
-            #     raise Exception("There is no valid case statement")
+        caseStatements = self.visit(ctx.statements(0))
+        defaultStatements = self.visit(ctx.statements(1))
+        for case in caseStatements.statements:
+            if exp.value == case.exp.value:
+                return SwitchStatementNode(exp, case, defaultStatements)
 
-    # case exp : statement break ;
+    # case exp : statements break ;
     def visitCaseStatement(self, ctx: BaliParser.CaseStatementContext):
         exp = self.visit(ctx.exp())
-        statement = self.visit(ctx.statement())
-        return CaseStatementNode(exp, statement)
+        statements = self.visit(ctx.statements())
+        return CaseStatementNode(exp, statements)
 
     #     | 'while' '(' exp ')' '{' statements '}' ';'                             # whileStatement
     def visitWhileStatement(self, ctx: BaliParser.WhileStatementContext):

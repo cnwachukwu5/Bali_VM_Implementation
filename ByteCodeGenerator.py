@@ -228,12 +228,13 @@ class ByteCodeGenerator(object):
     def visitSwitchStatement(self, statementNode):
         decision = self.visit(statementNode.exp)
         caseStatements = self.visit(statementNode.caseStatements)
-        code = decision + caseStatements
+        defaultStatements = self.visit(statementNode.defaultStatements)
+        code = decision + caseStatements + defaultStatements
         return code
 
     def visitCaseStatement(self, statementNode):
         decision = self.visit(statementNode.exp)
-        case = self.visit(statementNode.statement)
+        case = self.visit(statementNode.caseStatements)
         code = decision + case
         return code
 

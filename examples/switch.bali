@@ -1,10 +1,19 @@
-
-switch (2) {
+switch (3) {
     case 1:
         print "I am case 1";
+        print "False Case";
         break;
 
     case 2:
         print "I am case 2";
+        print "False Case";
         break;
+
+    case 3:
+        print "I am case 3";
+        print "Correct Case";
+        break;
+
+    default:
+        print "I am default"
 };
